@@ -1,0 +1,151 @@
+The Requirement 
+1. Launching new data-driven campaign
+2. Main Advertising channel - youtube
+3. Initial question to ans;
+- how to categories video , based on their comments and statistics 
+- what factors affect how popular a youtube video will be 
+
+youtube - because 2 most visited
+
+Goal and Success Criteria
+- Data Ingestion - ingest data
+- data lake - design and build new
+- aws cloud - as cloud provider
+- etl desing - extract transform and load the data efficielty 
+- scalability - the archi. should scale efficiently 
+- reporitng - build a business intelligence tier
+
+Learing  - 
+1. To build a data late from scratch in Amazon S3
+- joining semi-str and str data
+2. Lake House Architecture design 
+- Best practices - cost and performane
+3. data late vs data warehouse
+4. Data lake desing in layers , partitioned for cost- performace 
+- landing , cleansed as SSOT , reporting for BI users
+5. AWS DATA catalogue
+6. ETL in AWS Glue Spark jobs
+- amazon SageMaker Jupyter Notebooks
+7. Amazon SNS for alerting 
+8. SQL using Amazon Athena and Spark SQL 
+9. Ingest changes incrementally and schema evolution
+10. BI dashboards in Amazon QuickSight
+
+================================================================================================
+
+What is BIG DATA
+
+1. massive data sets , with varied and complex structure
+2. with the defficulties of storing and anaysing 
+3. viisualizing for further processes or results 
+
+Download youtube from the kaggale 
+https://www.kaggle.com/datasets/datasnaek/youtube-new
+
+* what is on-premise data centre 
+1. You / your company has its own hardware 
+2. you need to maintain it - 
+- purchase , fix , and upgrade hardware 
+- install and maintain operating system and other software
+
+but inspite of this we use CLoud 
+
+Cloud - application deliver as service over the internet 
+
+// what the Cloud is being so disruptive 
+"A 10-node cluster running for 10 hours costs the same as a 100-node cluster running for one hour"
+On Premise , extra-hardware for a clustermeans
+1. procurement , approval , licensing 
+2. shipping , installation , electricity , cooling systems
+3. underutilized nobody is using the hardware 
+4. sustainability issue 
+
+AWS - the leading cloud platform 
+@ 200+ services 
+- compute 
+- storage and databases
+- AI and ML 
+- Data Lakes and Analytics 
+- Internet of Things
+
+Create AWS Account 
+Create IAM user and IAM group  - got to IAM -> go to users -> add users -> give name -> Access key -> password -> create custom pasword -> check uncheck reset password ->
+-> next permission -> set permission -> go to Attack Existing policies directly , to give admin access -> check (AdministratorAccess) -> next page - > not need to provide tags
+-> review -> click on create user
+Success - Download the .csv file
+csv have - user , accesskey , secret access key , email
+
+* never share your secret key with anyone - otherwise they can taje access of your account
+
+- logout and then again login(from IAM account) with credentails
+
+after login =
+AWS management console , looks same but the permission are different 
+
+
+also Multiple ways to interact with our AWS env
+
+- AWS console 
+- Programmatically 
+ eg - AWS CLI , SDK
+
+AWS Region - physical location around the world, where AWS has data centers
+Install AWS CLI
+
+
+Now Open CMD - and write command  ----- aws -------- this show ---  usage aws
+
+then -----------------------------------aws configure ---------
+then --------------AWS ACCESS Key id : _______________
+then ---------------Secret key : _________________ paste both from cli
+then ----------------region : ______ ex -- us-east-1
+then ---------------default output formate -- keep default
+then clear 
+
+check --- aws s3 ls ----------list of all s3 bucket ------------also access this with ui also by clicking on the S3 on the console 
+
+
+===============================
+
+Now , steps to get our data 
+
+1. Download from the kaggle
+2. Create an Amazon s3 bucket , for our landing bucket 
+3. Copy the data to s3 , using our AWS CLI
+
+
+>>>>>>>>>>>>>>>>> go to amazon console --> s3 ---> create bucket --->
+-------> give unique name --> aws region --> keep the rest of the thing same , public block  ------> server side encryption (Enable) -------- > create bucket ,after some time
+
+once you created the bucket ---> then upload the data on the bucket either by using commands or by direct upload from the AWS console
+
+===================================================================
+
+Agenda -- 
+
+1. Basics of lake house architecture
+2. what is the AWS GLue Data Catalog 
+3. Catalog our Youtube Data
+
+
+-===================
+
+Data Lake - data is a centralized repository where we can store all of our data, everything will store in a particular one location either structre or semi-structure - and then we can wih this data into the data warehouse
+
+Lake House Architecture 
+
+1. Scalable Data lakes
+2. Purpose-built data services 
+3. seamless data movement 
+4. unified governane
+5. performance and cost-effective 
+
+=========================
+AWS Glue Catalog - using this , we cam crawl to the database  
+
+data come from multiple sources -----> Discover metadata ----> then the glue data catalog serves as a central metadata repository ----> amazon thena, amazon redshift spetrum , amazon EMR , (Access the Glue Data Catalog for ETL and analytics )  -------> BI Tools
+
+
+=======================================
+
+search AWS GLue in AWS console ---> then go to crawlers
