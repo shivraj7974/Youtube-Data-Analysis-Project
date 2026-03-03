@@ -1,0 +1,37 @@
+AWS Glue - go to crawler (creating crawler)--> get started --> 
+--> click crawler --> add crawler -- give name --> next ---> choose s3 path
+--> then create IAM rule , 
+--> with s3 , add permission --> glue console --> then choose IAM rule find role --> then click next
+--> then add database  --> table is created in the catalog 
+--> inside table catalog --> view data --> then preview data --> it will redirect you to AWs Athena 
+AWS Athena is a adhoc query tool 
+
+create another bucket for the Athena 
+
+error --- json data should be in one single line 
+
+------------------------------------------------
+Now goal : Data Cleansing 
+Create out light ETL : JSON to Apache Parquet 
+
+============================================
+
+data Cleansing -- semi structured data to structured pipeline
+
+JSON --> Amazon S3 Raw Bucket <-- Trigger --------> AWS Lambda Json to Apache Parquet -----> Amazon S3 cleansed bucket <--------data in row or column --> then AWS Glue Data Catalog ---> Amazon Athena
+
+go to AWS LAMBDA -- open in new tab
+
+create another bucket for the aws lambda 
+
+Aws LAMBDA - one of the aws compute services 
+- serverless
+- high available and scalable
+- limits at this moment :
+. deployment package is 50mb 
+ . you can use or mount efs volumes : more storage and share it across executions
+. 10 gb for memory 
+. 6 vCPUs
+. 15 min timeout
+
+AWS Lambda Layer - 
